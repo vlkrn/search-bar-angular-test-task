@@ -1,0 +1,39 @@
+<header class="header-container">
+    @if (isMobileMenuOpen()) {
+    <div class="mobile-menu desktop-hidden">
+        <app-menu></app-menu>
+    </div>
+    }
+    <div class="header-navigation">
+        <div class="header-navigation__logo-menu">
+            <button icon-button class="menu-icon desktop-hidden"  
+            (click)="isMobileMenuOpen.set(!isMobileMenuOpen())">
+                <img src="assets/icons/menu.svg" alt="menu">
+            </button>
+            <img src="assets/images/logo.png" class="header-navigation__logo" alt="company logo">
+        </div>
+
+        <div class="header-navigation__controls">
+            <app-search class="header-navigation__search" [(isOpenSearch)]="isSearchOpened">
+                <app-menu class="mobile-hidden tablet-hidden"></app-menu>
+                <button icon-button class="icon" (click)="toggleSearch()">
+                    <img src="assets/icons/search.svg" alt="search">
+                </button>
+            </app-search>
+
+            <button icon-button class="icon">
+                <img src="assets/icons/subtract.svg" alt="subtract">
+            </button>
+            <button icon-button class="icon desktop-hidden">
+                <img src="assets/icons/history.svg" alt="history">
+            </button>
+        </div>
+    </div>
+
+    <div class="account">
+        <button icon-button class="icon" appBadge="32">
+            <img src="assets/icons/notifications.svg" alt="notifications">
+        </button>
+        <img src="assets/images/ava.png" class="mobile-hidden user-avatar" alt="user avatar">
+    </div>
+</header>

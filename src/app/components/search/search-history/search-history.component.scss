@@ -1,0 +1,35 @@
+$text-color: rgb(42, 48, 51);
+$font-size: 11px;
+$padding: 16px;
+
+.search-history {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 20px;
+    border-right: 1px solid rgb(225, 228, 230);
+
+    .search-history__title {
+        color: rgb(127, 135, 140);
+        font-size: $font-size;
+        font-weight: 500;
+        line-height: 14px;
+        padding: 0px $padding;
+        margin: 0;
+    }
+
+    .search-history__list {
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        scrollbar-width: none;
+    }
+
+    .search-history__items {
+        padding: 6px $padding;
+        color: $text-color;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+    }
+}

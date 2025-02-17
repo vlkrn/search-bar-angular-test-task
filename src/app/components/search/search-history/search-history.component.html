@@ -1,0 +1,8 @@
+<div class="search-history">
+    <h3 class="search-history__title">История</h3>
+    <div class="search-history__list">
+        @for (item of list(); track $index) {
+        <span class="search-history__items">{{ item }}</span>
+        }
+    </div>
+</div>

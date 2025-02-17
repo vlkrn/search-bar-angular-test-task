@@ -1,0 +1,115 @@
+:host {
+    width: 100%;
+}
+
+$gap-desktop: min(0.6vw, 8px);
+$padding-desktop: min(1.8vw, 24px);
+$padding-mobile: 8px;
+
+.search-options {
+    display: flex;
+    flex-direction: column;
+    padding: $padding-desktop 0px $padding-desktop $padding-desktop;
+
+    @media (max-width: 767px) {
+        padding: 16px 0px 16px 16px;
+    }
+
+    .search-options__author {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: calc(0.5 * $gap-desktop);
+        margin-right: 24px;
+        position: relative;
+        border: 1px solid rgb(225, 228, 230);
+        border-radius: 4px;
+
+        input {
+            width: 100%;
+            padding: 14px 40px 14px 16px;
+            border: none;
+        }
+
+        label {
+            position: absolute;
+            top: -9px;
+            left: 16px;
+            color: rgb(140, 148, 153);
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 16px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        button {
+            position: absolute;
+            right: 12px;
+        }
+    }
+
+    .search-options__author-options {
+        margin-top: 16px;
+    }
+
+    .search-options__only-options {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 20px;
+
+        h3 {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            margin: 0;
+        }
+    }
+
+    .checkbox-row {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        color: rgb(42, 48, 51);
+        gap: 8px;
+
+        @media (max-width: 767px) {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0px;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: calc(0.25 * $padding-desktop) calc(0.5 * $padding-desktop);
+            white-space: nowrap;
+        }
+
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+
+            @media (max-width: 767px) {
+                display: none;
+            }
+        }
+
+        .checkbox-icon {
+            display: none;
+            margin: 4px;
+
+            @media (max-width: 767px) {
+                display: block;
+                width: 24px;
+                height: 24px;
+                background: url('/assets/icons/checkbox.svg') no-repeat center/contain;
+            }
+        }
+
+        input:checked+.checkbox-icon {
+            background: url("/assets/icons/checkbox-checked.svg") no-repeat center/contain;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+<div class="search-options" [formGroup]="formGroup">
+    <div class="search-options__author">
+        <label>Автор</label>
+        <input type="text" formControlName="authorName" placeholder="Имя или должность" />
+        <button>Я</button>
+    </div>
+    <div class="search-options__author-options checkbox-row">
+        <label>
+            <input type="checkbox" formControlName="isParticipant" />
+            <span class="checkbox-icon"></span>
+            Я участник
+        </label>
+
+        <label>
+            <input type="checkbox" formControlName="strictSearch" />
+            <span class="checkbox-icon"></span>
+            Строгий поиск
+        </label>
+
+        <label>
+            <input type="checkbox" formControlName="inTitles" />
+            <span class="checkbox-icon"></span>
+            В заголовках
+        </label>
+    </div>
+    <div class="search-options__only-options">
+        <h3>Только</h3>
+        <div class="checkbox-row">
+            <label>
+                <input type="checkbox" formControlName="tags" />
+                <span class="checkbox-icon"></span>
+                Теги
+            </label>
+
+            <label>
+                <input type="checkbox" formControlName="requests" />
+                <span class="checkbox-icon"></span>
+                Просьбы
+            </label>
+
+            <label>
+                <input type="checkbox" formControlName="contacts" />
+                <span class="checkbox-icon"></span>
+                Контакты
+            </label>
+        </div>
+    </div>
+</div>
