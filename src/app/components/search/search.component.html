@@ -1,9 +1,11 @@
+<ng-content></ng-content>
+
 <div #searchBlock class="search-block" [ngClass]="{'show-search': isOpenSearch()}">
     <div class="search-block__input">
         <button icon-button (click)="changeSearchVisibility(false)" class="tablet-hidden desktop-hidden">
             <img src="assets/icons/arrow-back.svg" alt="close search">
         </button>
-        <input type="text" placeholder="Поисковый запрос" />
+        <input type="text" placeholder="Поисковый запрос" (focus)="isOpenSettings.set(true)"/>
     </div>
 
     <div class="search-block__settings" [ngClass]="{'hide-settings': !isOpenSettings()}">
@@ -11,5 +13,3 @@
         <app-search-options (optionsChanged)="options.set($event)"></app-search-options>
     </div>
 </div>
-
-<ng-content></ng-content>
